@@ -58,6 +58,8 @@
     @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(61,220,132,0.5); } 70% { box-shadow: 0 0 0 7px rgba(61,220,132,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,132,0); } }
     @media (prefers-reduced-motion: reduce) { .dot { animation: none; } html { scroll-behavior: auto; } }
     @media (max-width: 900px) { .nav ul li:not(:last-child) { display: none; } }
+    .status { white-space: nowrap; }
+    @media (max-width: 400px) { .logo { font-size: 13px; } .status { font-size: 11px; padding: 4px 10px !important; margin-left: 0; } }
 
     /* Shared */
     section { padding: 104px 0; position: relative; }
@@ -83,10 +85,23 @@
     /* Hero */
     .hero { padding: 88px 0 96px; }
     .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
-    .idline { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; row-gap: 6px; margin: 0 0 -24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); font: 500 13px var(--mono); color: var(--muted); }
+    .idblock { grid-column: 1 / -1; margin: 0 0 -24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .idline { display: flex; flex-wrap: wrap; align-items: center; row-gap: 4px; margin: 0; font: 500 13px var(--mono); color: var(--muted); }
+    .idline + .idline { margin-top: 8px; }
     .idline span + span::before { content: "|"; color: var(--amber); margin: 0 12px; }
     .idline .id-name { color: var(--ink); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
-    @media (max-width: 640px) { .idline .id-name { flex-basis: 100%; } .idline .id-name + span::before { content: none; } }
+    .id-contact a { color: var(--cyan); text-decoration: none; }
+    .id-contact a:hover { text-decoration: underline; }
+    .id-contact i { font-style: normal; }
+    .id-contact .lbl { display: none; }
+    .id-contact a { display: inline-flex; align-items: center; gap: 6px; }
+    .id-contact .ico { width: 13px; height: 13px; flex: none; }
+    @media (max-width: 1000px) { .idline .id-role { display: none; } .id-contact .full { display: none; } .id-contact .lbl { display: inline; } }
+    @media (max-width: 480px) {
+      .idline { font-size: 11px; } .idline span + span::before { margin: 0 6px; }
+      .id-contact .lbl { display: none; } .id-contact .ico { width: 15px; height: 15px; }
+    }
+    @media (max-width: 380px) { .id-contact { font-size: 10px; } .id-contact span + span::before { margin: 0 5px; } }
     .hero .actions { display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
     .trace { overflow: hidden; box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(245,165,36,0.06); }
     .trace-top { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--line); font: 400 12px var(--mono); color: var(--muted); }
@@ -192,6 +207,12 @@
     .repo .chips { margin-top: auto; padding-top: 6px; }
     @media (max-width: 960px) { .repos { grid-template-columns: 1fr; } }
 
+    /* Technical stack */
+    .stackline { padding: 28px 32px; }
+    .stack-prompt { display: block; font: 400 12px var(--mono); color: var(--green); margin-bottom: 12px; }
+    .stackline p { margin: 0; font: 400 17px/1.9 var(--mono); color: var(--ink); }
+    @media (max-width: 640px) { .stackline { padding: 22px 20px; } .stackline p { font-size: 14px; } }
+
     /* About */
     .about-grid { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; }
     .idcard { padding: 28px; position: sticky; top: 90px; }
@@ -222,7 +243,7 @@
     @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
 
     footer { padding: 28px 0 44px; color: var(--dim); font: 400 13px var(--mono); border-top: 1px solid var(--line); }
-    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer .copy { margin: 16px 0 0; }
   </style>
 </head>
 <body>
@@ -237,6 +258,7 @@
           <li><a href="#fde">fde</a></li>
           <li><a href="#approach">approach</a></li>
           <li><a href="#work">work</a></li>
+          <li><a href="#stack">stack</a></li>
           <li><a href="#about">about</a></li>
           <li><a class="status" href="#contact"><span class="dot"></span>Open to FDE roles</a></li>
         </ul>
@@ -248,13 +270,21 @@
     <!-- Hero -->
     <section class="hero" id="top">
       <div class="wrap hero-grid">
-        <p class="idline">
-          <span class="id-name">Rakesh Gambhir</span>
-          <span>Forward Deployed Engineer</span>
-          <span>AI Agents</span>
-          <span>LLM Cost &amp; Observability</span>
-          <span>AI QA Automation</span>
-        </p>
+        <div class="idblock">
+          <p class="idline">
+            <span class="id-name">Rakesh Gambhir</span>
+            <span>Forward Deployed Engineer</span>
+            <span class="id-role">AI Agents</span>
+            <span class="id-role">LLM Cost &amp; Observability</span>
+            <span class="id-role">AI QA Automation</span>
+          </p>
+          <p class="idline id-contact">
+            <span><a href="mailto:rakesh.gambhir@live.com">rakesh.gambhir@live.com</a></span>
+            <span><a href="tel:+16145473171">(614) 547-3171</a></span>
+            <span><a href="https://www.linkedin.com/in/rgambhir/" aria-label="LinkedIn"><svg class="ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg><i class="full">linkedin.com/in/rgambhir</i><i class="lbl">LinkedIn</i></a></span>
+            <span><a href="https://github.com/rgambhir777-rgb" aria-label="GitHub"><svg class="ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><i class="full">github.com/rgambhir777-rgb</i><i class="lbl">GitHub</i></a></span>
+          </p>
+        </div>
         <div>
           <h1>AI systems that ship to production and <span class="hl">stay trustworthy there.</span></h1>
           <p class="lead">I work inside customer teams to take agents and LLM applications from demo to dependable. That means measured cost, traced behavior, controlled hallucination and bias, and automated quality gates that keep everything honest after launch.</p>
@@ -503,6 +533,20 @@
       </div>
     </section>
 
+    <!-- Technical stack -->
+    <section id="stack">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Tools I build with</p>
+          <h2>Technical Stack</h2>
+        </div>
+        <div class="panel stackline">
+          <span class="stack-prompt">$ cat stack.txt</span>
+          <p>LangChain · OpenAI · Anthropic Claude · Python · FastAPI · Pinecone · Weaviate · FAISS · Chroma · Qdrant · n8n · Make · Zapier · Streamlit · Supabase · Docker · GitHub Actions · GPT-4 · Claude 3.5 · LlamaIndex</p>
+        </div>
+      </div>
+    </section>
+
     <!-- About (EDIT: your story) -->
     <section id="about">
       <div class="wrap about-grid">
@@ -514,7 +558,9 @@
             <div><dt>focus</dt><dd>AI quality &amp; reliability</dd></div>
             <div><dt>status</dt><dd style="color:var(--green)">open to FDE roles</dd></div>
             <div><dt>github</dt><dd><a href="https://github.com/rgambhir777-rgb">rgambhir777-rgb</a></dd></div>
-            <div><dt>linkedin</dt><dd><a href="https://www.linkedin.com/in/your-profile">profile →</a></dd></div>
+            <div><dt>linkedin</dt><dd><a href="https://www.linkedin.com/in/rgambhir/">in/rgambhir</a></dd></div>
+            <div><dt>email</dt><dd><a href="mailto:rakesh.gambhir@live.com">rakesh.gambhir@live.com</a></dd></div>
+            <div><dt>phone</dt><dd><a href="tel:+16145473171">(614) 547-3171</a></dd></div>
           </dl>
         </aside>
         <div class="about-body">
@@ -543,8 +589,9 @@
           <h2>Have an AI system that works in the demo but not in production?</h2>
           <p class="lead">I'm open to Forward Deployed Engineer roles and to engagements focused on agent reliability, LLM cost, observability and AI quality automation.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="mailto:you@example.com">Email me →</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/your-profile">Connect on LinkedIn</a>
+            <a class="btn btn-primary" href="mailto:rakesh.gambhir@live.com">Email me →</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/rgambhir/">Connect on LinkedIn</a>
+            <a class="btn btn-ghost" href="tel:+16145473171">Call (614) 547-3171</a>
           </div>
         </div>
       </div>
@@ -553,8 +600,17 @@
 
   <footer>
     <div class="wrap">
-      <span>Rakesh Gambhir · Forward Deployed AI Engineer</span>
-      <span>© <span id="yr">2026</span> · built &amp; tested in production</span>
+      <p class="idline">
+        <span class="id-name">Rakesh Gambhir</span>
+        <span>Forward Deployed Engineer</span>
+      </p>
+      <p class="idline id-contact">
+        <span><a href="mailto:rakesh.gambhir@live.com">rakesh.gambhir@live.com</a></span>
+        <span><a href="tel:+16145473171">(614) 547-3171</a></span>
+        <span><a href="https://www.linkedin.com/in/rgambhir/" aria-label="LinkedIn"><svg class="ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg><i class="full">linkedin.com/in/rgambhir</i><i class="lbl">LinkedIn</i></a></span>
+        <span><a href="https://github.com/rgambhir777-rgb" aria-label="GitHub"><svg class="ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><i class="full">github.com/rgambhir777-rgb</i><i class="lbl">GitHub</i></a></span>
+      </p>
+      <p class="copy">© <span id="yr">2026</span> · built &amp; tested in production</p>
     </div>
   </footer>
   <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
