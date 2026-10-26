@@ -16,7 +16,7 @@ short_description: Forward Deployed AI Engineer, agents, LLMOps and AI QA
 A single-page professional profile built with Next.js (App Router, TypeScript) and exported as static HTML. The block above is Hugging Face Space configuration, and GitHub ignores it.
 
 Published at:
-- GitHub Pages: https://rgambhir777-rgb.github.io/RakeshGambhir/
+- GitHub Pages: https://rgambhir777-rgb.github.io/RakeshGambhirPortfolio/
 - Hugging Face Space: https://huggingface.co/spaces/nusoftai/RakeshGambhir
 
 ## Develop
@@ -46,5 +46,5 @@ npm run build   # static site in out/
 
 ## Publishing
 
-- **GitHub** (`origin`): `rgambhir777-rgb/RakeshGambhir`. `.github/workflows/pages.yml` builds with `NEXT_PUBLIC_BASE_PATH=/RakeshGambhir` and deploys `out/`. Under **Settings → Pages**, the source must be **GitHub Actions**.
+- **GitHub** (`origin`): `rgambhir777-rgb/RakeshGambhirPortfolio`. `.github/workflows/pages.yml` builds with `NEXT_PUBLIC_BASE_PATH=/RakeshGambhirPortfolio` and deploys `out/`. Under **Settings → Pages**, the source must be **GitHub Actions**.
 - **Hugging Face** (`hf`): `nusoftai/RakeshGambhir`, a static Space. It runs `npm run build` and serves `out/index.html` at the root.
