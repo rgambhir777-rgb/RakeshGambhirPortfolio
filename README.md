@@ -8,10 +8,10 @@ app_build_command: npm run build
 app_file: out/index.html
 nodejs_version: "22"
 pinned: true
-short_description: Forward Deployed AI Engineer, agents, LLMOps and AI QA
+short_description: AI Quality Analyst, LLM evaluation and test automation
 ---
 
-# Rakesh Gambhir · AI FDE profile
+# Rakesh Gambhir · AI Quality Analyst portfolio
 
 A single-page professional profile built with Next.js (App Router, TypeScript) and exported as static HTML. The block above is Hugging Face Space configuration, and GitHub ignores it.
 
@@ -33,16 +33,12 @@ npm run build   # static site in out/
 |---|---|
 | `lib/profile.ts` | All contact details and section content (edit text here) |
 | `components/` | One component per page section |
-| `app/globals.css` | The full stylesheet (trace-console design) |
+| `app/globals.css` | The full stylesheet (soft light design) |
 | `app/layout.tsx` | Fonts, metadata, `<html>` shell |
 
-## Still to personalise
+## Content
 
-| Placeholder | Where in `lib/profile.ts` |
-|---|---|
-| Stats strip | `metrics` |
-| Selected work | `repos`, which should point to real repos |
-| About | the three paragraphs in `components/About.tsx` |
+All text comes from Rakesh's resumes and lives in `lib/profile.ts`. The hero scorecard numbers are an illustrative example.
 
 ## Publishing
 

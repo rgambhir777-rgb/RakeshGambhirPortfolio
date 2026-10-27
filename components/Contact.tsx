@@ -5,9 +5,9 @@ export default function Contact() {
     <section id="contact">
       <div className="wrap">
         <div className="panel cta">
-          <p className="prompt"><b>$</b> deploy --to production --with-confidence <span className="caret"></span></p>
-          <h2>Have an AI system that works in the demo but not in production?</h2>
-          <p className="lead">I&apos;m open to Forward Deployed Engineer roles and to engagements focused on agent reliability, LLM cost, observability and AI quality automation.</p>
+          <p className="prompt"><b>$</b> run --suite release --gate go/no-go <span className="caret"></span></p>
+          <h2>Need proof your AI is ready for real customers?</h2>
+          <p className="lead">I&apos;m open to AI Quality Analyst roles, and to work in LLM evaluation, test automation, performance testing and QA leadership.</p>
           <div className="actions">
             <a className="btn btn-primary" href={`mailto:${contact.email}`}>Email me →</a>
             <a className="btn btn-ghost" href={contact.linkedin}>Connect on LinkedIn</a>

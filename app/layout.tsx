@@ -7,15 +7,15 @@ const sans = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], 
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Rakesh Gambhir · Forward Deployed AI Engineer",
+  title: "Rakesh Gambhir · AI Quality Analyst",
   description:
-    "Forward Deployed Engineer for production AI: agents, LLM cost and tokens, LLM observability, accuracy, bias and hallucination control, and QA automation for AI systems.",
+    "AI Quality Analyst: LLM and virtual agent evaluation for context awareness, accuracy and hallucination, AI-assisted Playwright test automation, JMeter performance testing and QA leadership.",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0c10",
+  themeColor: "#f7f5f0",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

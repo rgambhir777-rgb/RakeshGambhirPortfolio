@@ -1,8 +1,10 @@
 // Single source for contact details and section content. Edit here, not in the components.
+// Sourced from Rakesh's two resumes in ../source-docs (timeline follows the CCaaS version).
 
 export const contact = {
   name: "Rakesh Gambhir",
-  role: "Forward Deployed Engineer",
+  role: "AI Quality Analyst",
+  title: "AI Quality Analyst",
   email: "rakesh.gambhir@live.com",
   phone: "(614) 547-3171",
   tel: "tel:+16145473171",
@@ -12,123 +14,201 @@ export const contact = {
   hfShort: "huggingface.co/nusoftai",
 };
 
-export const navLinks = ["focus", "fde", "approach", "work", "stack", "about"];
+export const status = "Open to AI QA roles";
 
-export const idRoles = ["AI Agents", "LLM Cost & Observability", "AI QA Automation"];
-
-// Illustrative trace for the hero graphic (placeholder numbers)
-export const traceSpans = [
-  { name: "agent.run", left: 0, width: 100, color: "var(--amber)", root: true },
-  { name: "plan", left: 0, width: 14, color: "var(--violet)" },
-  { name: "retrieve.docs", left: 14, width: 18, color: "var(--cyan)" },
-  { name: "tool.crm_lookup", left: 32, width: 16, color: "var(--cyan)" },
-  { name: "llm.generate", left: 48, width: 36, color: "var(--violet)" },
-  { name: "eval.grounded", left: 84, width: 9, color: "var(--green)" },
-  { name: "eval.bias", left: 93, width: 7, color: "var(--green)" },
+export const navLinks = [
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "process", label: "Process" },
 ];
 
-export const traceStats = [
-  { label: "tokens", value: "3,412" },
-  { label: "cost", value: "$0.012" },
-  { label: "latency", value: "1.8s" },
-  { label: "grounded", value: "0.94", color: "var(--green)" },
+export const idRoles = ["LLM Evaluation", "AI-Assisted Test Automation", "Performance Testing"];
+
+// Illustrative scorecard for the hero graphic (example numbers, not a real run)
+export const evalScores = [
+  { name: "context_awareness", score: 92, color: "var(--violet)" },
+  { name: "accuracy", score: 95, color: "var(--cyan)" },
+  { name: "hallucination_free", score: 97, color: "var(--green)" },
+  { name: "intent_routing", score: 94, color: "var(--cyan)" },
+  { name: "policy_compliance", score: 100, color: "var(--green)" },
+  { name: "handoff_to_agent", score: 89, color: "var(--amber)" },
 ];
 
-// Placeholder: replace with real numbers
+export const evalStats = [
+  { label: "conversations", value: "50" },
+  { label: "turns", value: "312" },
+  { label: "hallucination", value: "1.8%" },
+  { label: "verdict", value: "PASS", color: "var(--green)" },
+];
+
 export const metrics = [
-  { label: "experience", value: "10+ yrs", text: "Quality engineering & test automation" },
-  { label: "practice", value: "LLM evals", text: "Automated in CI/CD pipelines" },
-  { label: "systems", value: "Agents", text: "Built, instrumented and tested in production" },
-  { label: "delivery", value: "Customer-facing", text: "Embedded delivery with engineering and business teams" },
+  { value: "10+ yrs", label: "QA, test automation & test leadership" },
+  { value: "10,000", label: "users simulated in load tests" },
+  { value: "150+", label: "API tests automated in Playwright" },
+  { value: "70%", label: "less manual regression effort" },
 ];
 
-export const layers = [
-  { n: "L1", color: "var(--violet)", title: "Agents & orchestration", tag: "act", text: "Tools, memory, planning, human-in-the-loop", left: 0, width: 34 },
-  { n: "L2", color: "var(--amber)", title: "Tokens & cost", tag: "$ / task", text: "Budgets, caching, routing, cost per successful task", left: 18, width: 30 },
-  { n: "L3", color: "var(--cyan)", title: "LLM observability", tag: "see", text: "Traces, spans, tool calls, drift and quality signals", left: 30, width: 36 },
-  { n: "L4", color: "var(--rose)", title: "Accuracy, bias & hallucination control", tag: "trust", text: "Grounding checks, fairness slices, refusal policy", left: 48, width: 32 },
-  { n: "L5", color: "var(--green)", title: "Quality gates & QA automation", tag: "ship / block", text: "Eval suites in CI, regression on every prompt change", left: 66, width: 34 },
+export const about = [
+  "I've spent more than ten years making sure enterprise systems work before real people depend on them: PeopleSoft time and payroll, Salesforce CRM, and cloud contact centers on Genesys and NICE CXone.",
+  "My recent work is about AI. I test agentic, LLM-driven virtual agents across voice, chat, email and SMS, and score multi-turn conversations for context awareness, accuracy and hallucination. I also use AI to test faster, generating Playwright page objects, fixtures and test data with Cursor, GitHub Copilot and MCP, with a human review and an automated run before anything is accepted.",
+  "Underneath that is classic QA discipline: test strategy, traceability from requirement to result, load and performance testing, accessibility, and clear go/no-go calls for release.",
+];
+
+export const quickFacts = [
+  { label: "Based in", value: "Columbus, OH" },
+  { label: "Focus", value: "AI quality & test automation" },
+  { label: "Status", value: status, tone: "green" },
+];
+
+export const experience = [
+  {
+    role: "Call Center Operations Test Analyst Lead",
+    org: "Nassau Financial Group",
+    period: "Jun 2025 – Sep 2026",
+    points: [
+      "Led discovery of customer journeys, agent workflows, IVR and routing for a NICE CXone transformation, producing the artifacts architects used to build test plans and scripts.",
+      "Tested virtual agents and multi-turn chat transactions, scoring LLM responses for context awareness, accuracy and hallucination.",
+      "Covered test planning, system and integration testing, UAT, regression and production smoke tests, including CRM integration, QM, WFM and digital channels.",
+    ],
+    chips: ["NICE CXone", "Salesforce", "Virtual agents", "LLM evaluation"],
+  },
+  {
+    role: "Genesys Migration Test Lead",
+    org: "Lockton Insurance",
+    period: "Sep 2024 – Jun 2025",
+    points: [
+      "Owned test strategy for a Genesys CTI cloud migration integrated with Salesforce: scope, entry/exit criteria, environments, test data and defect management.",
+      "Led functional, integration, regression, UAT and production-readiness testing of IVR, skills-based routing, transfers, callbacks and recordings.",
+      "Directed testing of click-to-dial, screen pops, automated call logging and Salesforce case association, through cutover and hypercare.",
+    ],
+    chips: ["Genesys Cloud", "Salesforce", "Test strategy", "UAT"],
+  },
+  {
+    role: "Playwright Automation Architect / Performance Tester",
+    org: "Federal client",
+    period: "Jan 2024 – Sep 2024",
+    points: [
+      "Architected an enterprise Playwright framework for UI, API, integration and end-to-end testing of a time entry system under Title V rules.",
+      "Used Cursor and GitHub Copilot to generate page objects, fixtures, locators and test-data generators, then reviewed and hardened them against framework standards.",
+      "Built and ran dozens of JMeter scripts simulating 10,000 users, and turned the results into tuning recommendations against SLAs.",
+    ],
+    chips: ["Playwright", "TypeScript", "Cursor", "JMeter"],
+  },
+  {
+    role: "Performance Test Engineer",
+    org: "UT System",
+    period: "Apr 2023 – Nov 2023",
+    points: [
+      "Designed a JMeter suite for a customer-facing ERP application: login, multi-criteria invoice search, supplier search and drill-down.",
+      "Ran load, stress, spike and endurance tests, handling session IDs and auth tokens with extractors and correlation.",
+    ],
+    chips: ["JMeter", "Load testing", "Correlation"],
+  },
+  {
+    role: "Test Automation Architect",
+    org: "Harris County",
+    period: "Sep 2020 – Apr 2023",
+    points: [
+      "Led enterprise rollout of ALM test automation and built a reusable test library for PeopleSoft PUM upgrades.",
+      "Coached and managed four consultants and three client team members across test planning, scripting and execution.",
+      "Architected Selenium framework scripts, and focused testing on ADA and WCAG 2.1 gaps ahead of a county-wide Section 508 effort.",
+    ],
+    chips: ["ALM", "Selenium", "PeopleSoft", "WCAG 2.1"],
+  },
+  {
+    role: "Test Architect & Test Lead",
+    org: "Various clients",
+    period: "Jan 2015 – Dec 2020",
+    points: [
+      "Led QA for contact-center, Salesforce CRM and PeopleSoft initiatives, staying hands-on in functional, integration, regression and UAT testing.",
+      "Tested PeopleSoft Time and Labor and payroll: time entry, approvals, exceptions, schedules, calculations and downstream payroll.",
+      "Built requirement-to-result traceability and reported defect trends, risks and go/no-go recommendations to stakeholders.",
+    ],
+    chips: ["PeopleSoft PTF", "Salesforce", "Selenium", "Jira"],
+  },
+];
+
+export const projects = [
+  {
+    label: "AI evaluation", client: "Contact center · NICE CXone", title: "Scoring multi-turn LLM virtual agents",
+    summary: "Testing agentic, LLM-driven virtual agents across chat, voice, email and SMS before they reach customers.",
+    problem: "A virtual agent can sound fluent while losing context, giving wrong answers or inventing facts mid-conversation.",
+    approach: "Multi-turn test conversations built from discovered customer journeys, each turn scored for context awareness, accuracy and hallucination.",
+    result: "Quality evidence the business could use to decide when the agents were ready for real callers.",
+    chips: ["LLM evaluation", "Multi-turn", "Hallucination"],
+    color: "var(--violet)",
+  },
+  {
+    label: "AI-assisted automation", client: "Federal time entry system", title: "AI-assisted Playwright framework",
+    summary: "An enterprise Playwright framework built faster with Cursor, GitHub Copilot and MCP, without giving up review.",
+    problem: "Hand-writing page objects, fixtures and test data for a large time entry system was slow and repetitive.",
+    approach: "AI generated first drafts of page objects, locators and fixtures from source, DOM and requirements; every draft went through human review and an automated test run.",
+    result: "A scalable POM architecture with shared standards for locators, fixtures, synchronization and parallel runs.",
+    chips: ["Playwright", "Cursor", "MCP", "Human-in-the-loop"],
+    color: "var(--amber)",
+  },
+  {
+    label: "API automation", client: "Lockton · insurance", title: "Playwright API and UI test suite",
+    summary: "End-to-end workflows that combine API and UI checks in one Playwright suite.",
+    problem: "Regression relied on manual checks and on the UI alone.",
+    approach: "Custom fixtures, API interception and backend validation, with AI-assisted refactoring to fold duplicate code into reusable pieces.",
+    result: "150+ API tests automated, 70% less manual regression effort, and more defects caught before production.",
+    chips: ["Playwright", "REST APIs", "Fixtures"],
+    color: "var(--cyan)",
+  },
+  {
+    label: "Performance", client: "Benefits enrollment · time entry · e-commerce", title: "High-volume load testing",
+    summary: "Distributed JMeter testing for peak events, where failure means people can't enroll, log time or buy.",
+    problem: "Systems had to survive year-end enrollment peaks and thousands of simultaneous users.",
+    approach: "Distributed load generators in non-GUI mode, realistic pacing and ramp-up, workload models, and HTML dashboards for trends.",
+    result: "Found maximum stable capacity at 3,000 concurrent users and 1,200 enrollments an hour; tested other systems at up to 8,000 and 10,000 users.",
+    chips: ["JMeter", "LoadRunner", "Dynatrace"],
+    color: "var(--rose)",
+  },
+  // From the earlier version of the site, not the resumes: results describe what each project does, not measured numbers
+  {
+    label: "LLM cost", client: "Personal project", title: "Token cost & latency observatory",
+    summary: "Tracing and dashboards that attribute token spend and latency to each feature and agent step.",
+    problem: "Nobody could say which feature or agent step drove the LLM bill, or why responses were slow.",
+    approach: "OpenTelemetry spans per agent step, cost attribution per feature, and caching and model-routing experiments.",
+    result: "A cost-per-task and latency view per release, so cost and speed are tested alongside accuracy.",
+    chips: ["OpenTelemetry", "Grafana", "Caching"],
+    color: "var(--amber)",
+  },
+  {
+    label: "AI trust", client: "Personal project", title: "Accuracy, hallucination & bias regression suite",
+    summary: "A golden dataset with accuracy, groundedness, citation and fairness-slice metrics, tracked release over release.",
+    problem: "Quality drifted silently with every prompt and model change.",
+    approach: "A versioned golden set, groundedness and citation checks, and fairness slices across user segments, run in CI.",
+    result: "Thresholds that block a release when accuracy drops or hallucination or bias rises.",
+    chips: ["RAG evals", "Fairness", "GitHub Actions"],
+    color: "var(--green)",
+  },
 ];
 
 export const focusAreas = [
-  {
-    path: "01 / agents", color: "var(--violet)", title: "Agentic systems",
-    text: "Agents that call tools, plan over several steps and hand off to humans when they should.",
-    points: ["Tool design, guardrails and permission boundaries", "Trajectory and step-level evaluation, not just final answers", "Failure recovery, retries and loop detection"],
-    chips: ["LangGraph", "MCP", "tool use"],
-  },
-  {
-    path: "02 / cost", color: "var(--amber)", title: "LLM cost & tokens",
-    text: "Token spend treated as an engineering metric, with owners and budgets.",
-    points: ["Cost per successful task, not cost per call", "Prompt caching, context trimming, model routing", "Budget alerts and per-feature cost attribution"],
-    chips: ["token budgets", "caching", "routing"],
-  },
-  {
-    path: "03 / observability", color: "var(--cyan)", title: "LLM observability",
-    text: "Seeing what the model and agent actually did, why, and what it cost.",
-    points: ["End-to-end tracing of prompts, retrievals and tool calls", "Latency, error and quality dashboards per release", "Drift detection and production sampling for review"],
-    chips: ["OpenTelemetry", "Langfuse", "Arize"],
-  },
-  {
-    path: "04 / trust", color: "var(--rose)", title: "Accuracy, bias & hallucination management", big: true,
-    text: "Trust is designed and measured, not hoped for. I define what \"correct\" means with the customer, then make it testable.",
-    points: [
-      "Golden datasets and rubric-based LLM-as-judge, calibrated against human labels",
-      "Groundedness and citation checks for RAG; hallucination rate tracked per release",
-      "Bias and fairness evaluation across user segments, with documented thresholds",
-      "Red-teaming, prompt-injection testing and safe-refusal behavior",
-    ],
-    chips: ["evals", "groundedness", "fairness slices", "red-teaming"],
-  },
-  {
-    path: "05 / qa", color: "var(--green)", title: "QA & QA automation for AI",
-    text: "Classic quality engineering adapted to systems that don't give the same answer twice.",
-    points: ["Eval suites running in CI as release gates", "Regression tests for prompts, models and retrieval", "Statistical pass criteria for non-deterministic output"],
-    chips: ["pytest", "promptfoo", "GitHub Actions"],
-  },
+  { color: "var(--violet)", title: "LLM & agent evaluation", text: "Multi-turn conversations scored for context awareness, accuracy and hallucination, across voice, chat, email and SMS." },
+  { color: "var(--amber)", title: "AI-assisted test engineering", text: "Cursor, GitHub Copilot and MCP to generate tests, page objects and test data, always with human review." },
+  { color: "var(--cyan)", title: "Test automation architecture", text: "Playwright and Selenium frameworks with page objects, fixtures, API and UI coverage, running in CI." },
+  { color: "var(--rose)", title: "Performance & load", text: "JMeter and LoadRunner scripts, workload models and bottleneck analysis, measured against SLAs." },
+  { color: "var(--green)", title: "Test strategy & release readiness", text: "Test plans, traceability, UAT, accessibility (WCAG 2.1) and clear go/no-go recommendations." },
 ];
 
-export const fdeSteps = [
-  { title: "Discover", text: "Map the workflow, the data and the real cost of a wrong answer. Agree on what success means.", out: "success criteria & risk map" },
-  { title: "Prototype", text: "Build the smallest agent or LLM flow that proves value on real customer data.", out: "working agent + baseline evals" },
-  { title: "Harden", text: "Test for accuracy, bias and hallucination. Add guardrails, then optimise tokens and latency.", out: "eval suite & cost model" },
-  { title: "Deploy", text: "Ship behind automated quality gates, with tracing and dashboards in place from day one.", out: "CI gates & observability" },
-  { title: "Operate & hand over", text: "Monitor drift and spend, run regressions, and train the team to own it.", out: "runbooks & team enablement" },
+export const processSteps = [
+  { title: "Discover", text: "Walk through customer journeys, workflows and integrations with the people who run them.", out: "journeys & requirements" },
+  { title: "Plan", text: "Set scope, risks, entry and exit criteria, environments and test data, traced back to requirements.", out: "test strategy & RTM" },
+  { title: "Automate", text: "Build Playwright and API suites, using AI to draft code and a human to approve it.", out: "framework in CI" },
+  { title: "Evaluate", text: "Score AI conversations, run load and accessibility tests, and triage defects with the team.", out: "scores & defect trends" },
+  { title: "Release", text: "Support UAT, give a go/no-go call, validate cutover and stay through hypercare.", out: "go/no-go & hypercare" },
 ];
 
-export const asserts = [
-  { code: "assert release.evaluated", title: "If it isn't evaluated, it isn't done", text: "Every prompt, model or tool change runs against a versioned eval set before it reaches users. Quality is a gate, not an afterthought." },
-  { code: "assert cost_per_task <= budget", title: "Cost is a quality attribute", text: "A correct answer that costs ten times too much is a failed release. Tokens, latency and accuracy are tracked together." },
-  { code: "assert every_step.traced", title: "Observable by default", text: "Every agent step is traced and every failure is explainable. When something goes wrong, the team can see why in minutes." },
-];
-
-// Placeholder: these repos don't exist yet
-export const repos = [
-  {
-    label: "Agent QA", repo: "agent-eval-harness", title: "Agent evaluation harness",
-    text: "A test framework that scores multi-step agent trajectories for tool choice, step efficiency and final-answer correctness, and runs in CI on every pull request.",
-    chips: ["Python", "pytest", "LLM-as-judge"],
-  },
-  {
-    label: "Cost", repo: "llm-cost-observatory", title: "Token cost & latency observatory",
-    text: "Tracing and dashboards that attribute token spend and latency to each feature and agent step. Includes caching and routing experiments with measured savings.",
-    chips: ["OpenTelemetry", "Grafana", "caching"],
-  },
-  {
-    label: "Trust", repo: "llm-trust-suite", title: "Hallucination & bias regression suite",
-    text: "A golden dataset with groundedness, citation and fairness-slice metrics, tracked release over release, with thresholds that block deployment.",
-    chips: ["RAG evals", "fairness", "GitHub Actions"],
-  },
-];
-
-export const githubUser = "rgambhir777-rgb";
-
-export const stack = [
-  "LangChain", "OpenAI", "Anthropic Claude", "Python", "FastAPI", "Pinecone", "Weaviate", "FAISS", "Chroma", "Qdrant",
-  "n8n", "Make", "Zapier", "Streamlit", "Supabase", "Docker", "GitHub Actions", "GPT-4", "Claude 3.5", "LlamaIndex",
-];
-
-export const toolbox = [
-  "Python", "TypeScript", "LangGraph", "MCP", "OpenTelemetry", "Langfuse", "promptfoo", "pytest",
-  "Playwright", "GitHub Actions", "Docker", "AWS / Azure / GCP",
+export const skills = [
+  { group: "AI quality", items: ["Multi-turn LLM evaluation", "Hallucination scoring", "Context-awareness scoring", "Virtual agents", "AI failure analysis", "AI test data generation"] },
+  { group: "AI-assisted engineering", items: ["Cursor", "GitHub Copilot", "MCP", "LangChain", "OpenAI", "Anthropic Claude", "LlamaIndex", "ChromaDB"] },
+  { group: "Test automation", items: ["Playwright", "Selenium WebDriver", "TypeScript", "Python", "Java", "pytest", "TestNG", "Rest Assured", "Postman / Newman"] },
+  { group: "Performance", items: ["JMeter", "LoadRunner", "Performance Center", "Dynatrace", "AppDynamics"] },
+  { group: "CI/CD & test management", items: ["GitHub Actions", "Jenkins", "Azure DevOps", "Docker", "Jira", "ALM", "qTest", "Confluence"] },
+  { group: "Platforms & data", items: ["NICE CXone", "Genesys Cloud", "Salesforce", "PeopleSoft", "Oracle", "SQL Server", "Postgres", "MongoDB"] },
 ];

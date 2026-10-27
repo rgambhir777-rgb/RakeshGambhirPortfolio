@@ -1,13 +1,11 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Metrics from "@/components/Metrics";
-import Layers from "@/components/Layers";
-import FocusAreas from "@/components/FocusAreas";
-import Fde from "@/components/Fde";
-import Approach from "@/components/Approach";
-import Work from "@/components/Work";
-import Stack from "@/components/Stack";
 import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import FocusAreas from "@/components/FocusAreas";
+import Process from "@/components/Process";
+import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -18,14 +16,12 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <Metrics />
-        <Layers />
-        <FocusAreas />
-        <Fde />
-        <Approach />
-        <Work />
-        <Stack />
         <About />
+        <Experience />
+        <Projects />
+        <FocusAreas />
+        <Process />
+        <Skills />
         <Contact />
       </main>
       <Footer />
