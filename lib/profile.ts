@@ -62,7 +62,19 @@ export const quickFacts = [
   { label: "Status", value: status, tone: "green" },
 ];
 
+// org and period are optional: leave them empty until known
 export const experience = [
+  {
+    role: "Accuracy, Hallucination & Bias Regression Suite",
+    org: "",
+    period: "",
+    points: [
+      "Built a versioned golden dataset to measure LLM answers for accuracy, groundedness and citation quality, release over release.",
+      "Added fairness slices that compare results across user segments, so bias shows up as a number instead of an anecdote.",
+      "Ran the suite in CI with thresholds that block a release when accuracy drops or hallucination or bias rises.",
+    ],
+    chips: ["LLM evaluation", "Hallucination", "Bias & fairness", "GitHub Actions"],
+  },
   {
     role: "Call Center Operations Test Analyst Lead",
     org: "Nassau Financial Group",
@@ -141,7 +153,7 @@ export const projects = [
     color: "var(--violet)",
   },
   {
-    label: "AI-assisted automation", client: "Federal time entry system", title: "AI-assisted Playwright framework",
+    label: "AI-assisted automation", client: "Time entry system", title: "AI-assisted Playwright framework",
     summary: "An enterprise Playwright framework built faster with Cursor, GitHub Copilot and MCP, without giving up review.",
     problem: "Hand-writing page objects, fixtures and test data for a large time entry system was slow and repetitive.",
     approach: "AI generated first drafts of page objects, locators and fixtures from source, DOM and requirements; every draft went through human review and an automated test run.",
@@ -150,7 +162,7 @@ export const projects = [
     color: "var(--amber)",
   },
   {
-    label: "API automation", client: "Lockton · insurance", title: "Playwright API and UI test suite",
+    label: "API automation", client: "Insurance", title: "Playwright API and UI test suite",
     summary: "End-to-end workflows that combine API and UI checks in one Playwright suite.",
     problem: "Regression relied on manual checks and on the UI alone.",
     approach: "Custom fixtures, API interception and backend validation, with AI-assisted refactoring to fold duplicate code into reusable pieces.",

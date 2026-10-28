@@ -14,8 +14,8 @@ export default function Experience() {
             <li key={j.role + j.period} className="job">
               <div className="panel">
                 <div className="job-head">
-                  <h3>{j.role} <span>· {j.org}</span></h3>
-                  <time>{j.period}</time>
+                  {/* Client (org) and dates (period) stay in lib/profile.ts but are hidden for now, at Rakesh's request */}
+                  <h3>{j.role}</h3>
                 </div>
                 <ul>
                   {j.points.map((p) => <li key={p}>{p}</li>)}
