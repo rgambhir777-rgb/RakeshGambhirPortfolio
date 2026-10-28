@@ -19,7 +19,7 @@ export default function Hero() {
               </div>
             </div>
             <h1>I test AI systems <span className="hl">before your customers do.</span></h1>
-            <p className="lead">AI Quality Analyst with 10+ years in QA leadership, test automation and performance testing. I score LLM-driven virtual agents for context awareness, accuracy and hallucination, and build AI-assisted Playwright frameworks where a human reviews what the AI writes.</p>
+            <p className="lead">AI Quality Analyst with 10+ years in QA leadership, test automation and performance testing. I score LLM-driven virtual agents for context awareness, accuracy and hallucination, build Playwright test suites, both classic and AI-assisted with a human reviewing what the AI writes, and run JMeter performance tests that show how much load a system can take before it breaks.</p>
             <div className="actions">
               <a className="btn btn-primary" href="#projects">View my work →</a>
               <a className="btn btn-ghost" href="#contact">Get in touch</a>

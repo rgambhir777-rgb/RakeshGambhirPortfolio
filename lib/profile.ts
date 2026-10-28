@@ -170,6 +170,16 @@ export const projects = [
     chips: ["Playwright", "REST APIs", "Fixtures"],
     color: "var(--cyan)",
   },
+  // Added at Rakesh's request (not in the resumes): no measured numbers yet
+  {
+    label: "UI & payments testing", client: "E-commerce · customer accounts", title: "Playwright testing of balances and payments",
+    summary: "End-to-end Playwright tests for an e-commerce site where customers check their account balance and make payments.",
+    problem: "A wrong balance or a double-charged payment costs customers money and trust, and these bugs hide in edge cases manual testing misses.",
+    approach: "Page objects for login, account balance and checkout; API checks that the balance on screen matches the backend before and after each payment; data-driven runs for successful, declined and repeated payments across browsers.",
+    result: "Each release proves balances are correct and every payment posts exactly once before customers see the change.",
+    chips: ["Playwright", "TypeScript", "Payments", "API validation"],
+    color: "var(--green)",
+  },
   {
     label: "Performance", client: "Benefits enrollment · time entry · e-commerce", title: "High-volume load testing",
     summary: "Distributed JMeter testing for peak events, where failure means people can't enroll, log time or buy.",
