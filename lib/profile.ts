@@ -53,7 +53,7 @@ export const metrics = [
 export const about = [
   "I've spent more than ten years making sure enterprise systems work before real people depend on them: PeopleSoft time and payroll, Salesforce CRM, and cloud contact centers on Genesys and NICE CXone.",
   "My recent work is about AI. I test agentic, LLM-driven virtual agents across voice, chat, email and SMS, and score multi-turn conversations for context awareness, accuracy and hallucination. I also use AI to test faster, generating Playwright page objects, fixtures and test data with Cursor, GitHub Copilot and MCP, with a human review and an automated run before anything is accepted.",
-  "Underneath that is classic QA discipline: test strategy, traceability from requirement to result, load and performance testing, accessibility, and clear go/no-go calls for release.",
+  "Underneath that is classic QA discipline: test strategy, traceability from requirement to result, load and performance testing, accessibility, and clear go/no-go calls for release, with work tracked in Jira and documented in Confluence.",
 ];
 
 export const quickFacts = [
@@ -80,22 +80,22 @@ export const experience = [
     org: "Nassau Financial Group",
     period: "Jun 2025 – Sep 2026",
     points: [
-      "Led discovery of customer journeys, agent workflows, IVR and routing for a NICE CXone transformation, producing the artifacts architects used to build test plans and scripts.",
+      "Led discovery of customer journeys, agent workflows, IVR and routing for a NICE CXone transformation, producing the Confluence artifacts architects used to build test plans and scripts.",
       "Tested virtual agents and multi-turn chat transactions, scoring LLM responses for context awareness, accuracy and hallucination.",
-      "Covered test planning, system and integration testing, UAT, regression and production smoke tests, including CRM integration, QM, WFM and digital channels.",
+      "Covered test planning, system and integration testing, UAT, regression and production smoke tests, including CRM integration, QM, WFM and digital channels, with test cycles and defects tracked in Jira.",
     ],
-    chips: ["NICE CXone", "Salesforce", "Virtual agents", "LLM evaluation"],
+    chips: ["NICE CXone", "Salesforce", "Virtual agents", "LLM evaluation", "Jira"],
   },
   {
     role: "Genesys Migration Test Lead",
     org: "Lockton Insurance",
     period: "Sep 2024 – Jun 2025",
     points: [
-      "Owned test strategy for a Genesys CTI cloud migration integrated with Salesforce: scope, entry/exit criteria, environments, test data and defect management.",
+      "Owned test strategy for a Genesys CTI cloud migration integrated with Salesforce: scope, entry/exit criteria, environments, test data and defect management in Jira.",
       "Led functional, integration, regression, UAT and production-readiness testing of IVR, skills-based routing, transfers, callbacks and recordings.",
       "Directed testing of click-to-dial, screen pops, automated call logging and Salesforce case association, through cutover and hypercare.",
     ],
-    chips: ["Genesys Cloud", "Salesforce", "Test strategy", "UAT"],
+    chips: ["Genesys Cloud", "Salesforce", "Test strategy", "UAT", "Confluence"],
   },
   {
     role: "Playwright Automation Architect / Performance Tester",
@@ -217,6 +217,16 @@ export const projects = [
     chips: ["Python", "pytest", "LLM-as-judge", "CI"],
     color: "var(--violet)",
   },
+  // Added at Rakesh's request: hands-on 8.63 work, no client or dates yet
+  {
+    label: "PeopleSoft AI adoption", client: "PeopleSoft FSCM · PUM upgrade", title: "PUM upgrade to PeopleTools 8.63 with AI adoption",
+    summary: "Upgrading PeopleSoft to PeopleTools 8.63 and getting testers and users ready for its new AI features.",
+    problem: "8.63 puts AI into everyday PeopleSoft pages, but those features only help if their answers are accurate, they respect PeopleSoft security, and people know when to trust them.",
+    approach: "Planned the upgrade in Jira and documented AI use cases and fit/gap in Confluence; tested Natural Language Search, Magic Button AI actions and MCP-connected agents against real data and security roles; extended PTF regression; built role-based training and Oracle Guided Learning walkthroughs.",
+    result: "An upgrade that pairs regression and AI security evidence with training, so users know what each AI feature does and how to check its answers.",
+    chips: ["PeopleTools 8.63", "PTF", "Guided Learning", "Jira", "Confluence"],
+    color: "var(--amber)",
+  },
 ];
 
 export const focusAreas = [
@@ -224,14 +234,14 @@ export const focusAreas = [
   { color: "var(--amber)", title: "AI-assisted test engineering", text: "Cursor, GitHub Copilot and MCP to generate tests, page objects and test data, always with human review." },
   { color: "var(--cyan)", title: "Test automation architecture", text: "Playwright and Selenium frameworks with page objects, fixtures, API and UI coverage, running in CI." },
   { color: "var(--rose)", title: "Performance & load", text: "JMeter and LoadRunner scripts, workload models and bottleneck analysis, measured against SLAs." },
-  { color: "var(--green)", title: "Test strategy & release readiness", text: "Test plans, traceability, UAT, accessibility (WCAG 2.1) and clear go/no-go recommendations." },
+  { color: "var(--green)", title: "Test strategy & release readiness", text: "Test plans in Confluence, traceability and defects in Jira, UAT, accessibility (WCAG 2.1) and clear go/no-go recommendations." },
 ];
 
 export const processSteps = [
   { title: "Discover", text: "Walk through customer journeys, workflows and integrations with the people who run them.", out: "journeys & requirements" },
-  { title: "Plan", text: "Set scope, risks, entry and exit criteria, environments and test data, traced back to requirements.", out: "test strategy & RTM" },
+  { title: "Plan", text: "Set scope, risks, entry and exit criteria, environments and test data, traced back to requirements in Jira.", out: "test strategy & RTM" },
   { title: "Automate", text: "Build Playwright and API suites, using AI to draft code and a human to approve it.", out: "framework in CI" },
-  { title: "Evaluate", text: "Score AI conversations, run load and accessibility tests, and triage defects with the team.", out: "scores & defect trends" },
+  { title: "Evaluate", text: "Score AI conversations, run load and accessibility tests, and triage defects in Jira with the team.", out: "scores & defect trends" },
   { title: "Release", text: "Support UAT, give a go/no-go call, validate cutover and stay through hypercare.", out: "go/no-go & hypercare" },
 ];
 

@@ -163,6 +163,8 @@ h3 { font-size: 20px; font-weight: 600; }
 
 /* Projects */
 .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+/* An odd card out at the end spans both columns instead of leaving a gap */
+.projects > .project:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .project { display: flex; flex-direction: column; overflow: hidden; transition: transform .2s, box-shadow .2s; }
 .project:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .project-cover { height: 6px; background: var(--c); opacity: 0.75; }
