@@ -208,6 +208,15 @@ export const projects = [
     chips: ["RAG evals", "Fairness", "GitHub Actions"],
     color: "var(--green)",
   },
+  {
+    label: "Agent QA", client: "Personal project", title: "Agent evaluation harness",
+    summary: "A test framework that scores multi-step AI agent runs, not just their final answers, and runs in CI on every pull request.",
+    problem: "Agents passed demos but failed on edge cases: wrong tool, wasted steps, or a confident wrong answer at the end.",
+    approach: "Replays scripted tasks and scores each trajectory for tool choice, step efficiency and final-answer correctness, using LLM-as-judge rubrics calibrated against human review.",
+    result: "Agent changes get a pass/fail score per task before merge, so regressions surface in review instead of production.",
+    chips: ["Python", "pytest", "LLM-as-judge", "CI"],
+    color: "var(--violet)",
+  },
 ];
 
 export const focusAreas = [
